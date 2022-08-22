@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -7,33 +8,37 @@ namespace Inheritance
         static void Main(string[] args)
         {
             // TODO Be sure to follow best practice when creating your classes
+            //Create an object of your Bird class
+            //give values to your members using the object of your Bird class 
+            //Creatively display the class member values
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
+            var Parrot = new Bird();
+            Parrot.EggsInNest = 2;
+            Parrot.BeakColor = "black";
+            Parrot.CanFly = true;
+            Parrot.FeatherColor = "blue";
 
+            //Create an object of your Reptile class
+            //give values to your members using the object of your Reptile class
+            //Creatively display the class member values
 
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
+            var Snake = new Reptile();
+            Snake.CanSwim = true;
+            Snake.ScaleColor = "red";
+            Snake.IsColdBlooded = true;
+            Snake.Habitat = "burrow";
 
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
+            //creating a collection
+            var myAnimals = new List<Animal> { Parrot, Snake };
 
-
-
-
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
-
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
-             */
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Age: {animal.Age}");
+                Console.WriteLine($"Number of Legs: {animal.NumberOfLegs}");
+                Console.WriteLine($"Diet: {animal.CarnivoreOmnivoreHerbivore}");
+                Console.WriteLine($"Is Alive: {animal.IsAlive}");
+                Console.WriteLine();
+            }
         }
     }
 }
